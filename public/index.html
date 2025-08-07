@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torfs Scraper</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🛍️ Torfs Scraper</h1>
+            <p>Scrape and display shoe data from Torfs website</p>
+        </header>
+
+        <main class="main">
+            <div class="controls">
+                <button id="scrapeBtn" class="btn btn-primary">
+                    <span class="btn-text">Scrape Torfs Shoes</span>
+                    <span class="btn-loading" style="display: none;">
+                        <div class="spinner"></div>
+                        Scraping...
+                    </span>
+                </button>
+                <button id="clearBtn" class="btn btn-secondary">Clear Results</button>
+            </div>
+
+            <div class="status" id="status"></div>
+
+            <div class="results" id="results">
+                <div class="results-header" style="display: none;">
+                    <h2>Scraped Products</h2>
+                    <div class="results-info">
+                        <span id="productCount">0</span> products found
+                        <span id="scrapeTime"></span>
+                    </div>
+                </div>
+                <div class="products-grid" id="productsGrid"></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Built with JavaScript, Node.js, and Express</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
