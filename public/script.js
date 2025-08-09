@@ -99,8 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
         card.className = 'product-card';
 
         const imageHtml = product.image 
-            ? `<img src="${product.image}" alt="${product.name}" onerror="this.parentElement.innerHTML='<div style=\'display: flex; align-items: center; justify-content: center; height: 100%; color: #6c757d;\'>No image available</div>'">`
-            : '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #6c757d;">No image available</div>';
+            ? `<img src="${product.image}" alt="${product.name}" 
+                 onerror="this.parentElement.innerHTML='<div style=\\'display: flex; align-items: center; justify-content: center; height: 100%; color: #6c757d; font-size: 0.9rem;\\'>Image not available</div>'"
+                 onload="this.style.opacity='1'" 
+                 style="opacity: 0; transition: opacity 0.3s ease;">`
+            : '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #6c757d; font-size: 0.9rem;">No image available</div>';
 
         const urlHtml = product.url 
             ? `<a href="${product.url}" target="_blank" class="product-url">View Product</a>`
